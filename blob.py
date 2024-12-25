@@ -71,6 +71,7 @@ def main_menu():
     Показывает меню пользователя, где можно выбрать функцию, ввести x и получить результат.
     Также проверяются граничные значения для x.
     """
+    terms = 10
     while True:
         print("\nМеню:\n"+
               "1. Вычислить cos(x)\n"+
@@ -84,6 +85,18 @@ def main_menu():
             print("Неверный выбор. Попробуйте снова.")
             continue
         if choice == '1':
-            pass
+            try:
+                x = float(input("Введите значение x: "))
+            except ValueError:
+                print("Ошибка: введите корректное число.")
+                continue
+            result = m_cos(x, terms)
+            print(f"cos({x}) ≈ {result}")
         elif choice == '2':
-           pass
+            try:
+                x = float(input("Введите значение x: "))
+            except ValueError:
+                print("Ошибка: введите корректное число.")
+                continue
+            result = m_sinh(x, terms)
+            print(f"sinh({x}) ≈ {result}")
