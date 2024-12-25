@@ -100,6 +100,4 @@ def main_menu():
                 continue
             result = m_sinh(x, terms)
             print(f"sinh({x}) ≈ {result}")
-
-if __name__ == "__main__":
-    main_menu()
+            
