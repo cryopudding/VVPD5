@@ -64,3 +64,42 @@ def m_sinh(x, terms):
     for n in range(terms):
         result += (x**(2*n + 1)) / math.factorial(2*n + 1)
     return result
+
+
+def main_menu():
+    """
+    Показывает меню пользователя, где можно выбрать функцию, ввести x и получить результат.
+    Также проверяются граничные значения для x.
+    """
+    terms = 10
+    while True:
+        print("\nМеню:\n"+
+              "1. Вычислить cos(x)\n"+
+              "2. Вычислить sinh(x)\n"+
+              "3. Выход")
+        choice = input("Выберите опцию : ")
+        if choice == '3':
+            print("Выход из программы...")
+            break
+        if choice not in {'1', '2'}:
+            print("Неверный выбор. Попробуйте снова.")
+            continue
+        if choice == '1':
+            try:
+                x = float(input("Введите значение x: "))
+            except ValueError:
+                print("Ошибка: введите корректное число.")
+                continue
+            result = m_cos(x, terms)
+            print(f"cos({x}) ≈ {result}")
+        elif choice == '2':
+            try:
+                x = float(input("Введите значение x: "))
+            except ValueError:
+                print("Ошибка: введите корректное число.")
+                continue
+            result = m_sinh(x, terms)
+            print(f"sinh({x}) ≈ {result}")
+
+if __name__ == "__main__":
+    main_menu()
