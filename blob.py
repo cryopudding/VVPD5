@@ -32,3 +32,10 @@ def m_cos(x, terms):
     for n in range(terms):
         result += (-1)**n * (x**(2*n)) / math.factorial(2*n)
     return result
+
+
+def m_sinh(x, terms):
+    result = 0
+    for n in range(terms):
+        result += (x**(2*n + 1)) / math.factorial(2*n + 1)
+    return result
